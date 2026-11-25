@@ -14,11 +14,15 @@ LINE = (
 
 
 def main() -> None:
+    # Gate check, mirroring the sealed scorer: 1-200 chars, single line.
+    text = LINE.strip()
+    assert 1 <= len(text) <= 200, f"entry is {len(text)} chars, must be 1-200"
+    assert "\n" not in text, "entry must be a single line"
     output_dir = os.environ.get("OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
     path = os.path.join(output_dir, "entry.txt")
     with open(path, "w", encoding="utf-8") as f:
-        f.write(LINE + "\n")
+        f.write(text + "\n")
 
 
 if __name__ == "__main__":
