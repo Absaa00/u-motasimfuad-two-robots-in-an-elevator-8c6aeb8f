@@ -1,0 +1,11 @@
+# two-robots-elevator — local run artefacts only
+__pycache__/
+*.py[cod]
+.pytest_cache/
+output/
+entry.txt
+.DS_Store
+Thumbs.db
+*.log
+.venv/
+venv/
